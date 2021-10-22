@@ -30,10 +30,7 @@ class ImageViewer(QMainWindow):
         self.pixmap = QPixmap(self.img_list[self.pos]).scaled(self.width, self.height, Qt.KeepAspectRatio, Qt.FastTransformation)
         self.label.setPixmap(self.pixmap)
         self.label.adjustSize()
-        # self.resize(self.pixmap.width(), self.pixmap.height())
-
-        # Create new action
-        # print(f'* Img load : {self.img_list[self.pos]}')
+        
         openAction = QAction(QIcon('open.png'), '&Open', self)
         openAction.setShortcut('Ctrl+O')
         openAction.setStatusTip('Open New Image')
@@ -97,28 +94,6 @@ class ImageViewer(QMainWindow):
             # print("mv " + key + " " + os.path.join(os.getcwd(), 'output', item))
             print(f"successfully moved {key} -> {item}")
         print("#---------------------------------#")
-
-# def keyPressEvent(self, e):
-#     if e.key() == 65:
-#         if not self.pos == 0:
-#             # self.pos -= 1
-#             # image = cv2.imread(self.img_list[self.pos])
-#             # """
-#             # 이미지 처리
-#             # """
-#             # self.openImage(image=self.toQImage(image))
-#             print('\r' + self.img_list[self.pos], end="")
-                                            
-#     elif e.key() == 68:
-#         # self.pos += 1
-#         # if self.total == self.pos:
-#         #     self.pos -= 1
-#         # image = cv2.imread(self.img_list[self.pos])
-#         # """
-#         # 이미지 처리
-#         # """
-#         # self.openImage(image=self.toQImage(image))            
-#         print('\r' + self.img_list[self.pos], end="")
 
 if __name__ == '__main__':
     import sys
